@@ -1,0 +1,467 @@
+/* 新拟态(Neumorphism)样式文件 */
+/* 与Bulma组件库兼容 */
+
+/* 基础新拟态样式 */
+.neumorphic {
+  background: #e0e5ec;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+/* Bulma兼容性 */
+.card.neumorphic-card {
+  border: none;
+  box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+}
+
+.button.neumorphic-button {
+  border: none;
+  box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
+}
+
+/* Bulma输入框兼容性 */
+.input.neumorphic-input,
+.textarea.neumorphic-input {
+  border: none;
+  box-shadow: inset 2px 2px 5px #a3b1c6, inset -2px -2px 5px #ffffff;
+}
+
+/* Bulma标签兼容性 */
+.tag.neumorphic-tag {
+  border: none;
+  box-shadow: 3px 3px 6px #a3b1c6, -3px -3px 6px #ffffff;
+}
+
+/* 深色主题下的Bulma兼容性 */
+@media (prefers-color-scheme: dark) {
+  .input.neumorphic-input,
+  .textarea.neumorphic-input {
+    border: none;
+    box-shadow: inset 2px 2px 5px #0f172a, inset -2px -2px 5px #2d3748;
+  }
+  
+  .tag.neumorphic-tag {
+    border: none;
+    box-shadow: 3px 3px 6px #0f172a, -3px -3px 6px #2d3748;
+  }
+}
+
+/* 凸起效果 */
+.neumorphic-raised {
+  box-shadow: 
+    5px 5px 10px #a3b1c6,
+    -5px -5px 10px #ffffff;
+}
+
+.neumorphic-raised:hover {
+  box-shadow: 
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+}
+
+.neumorphic-raised:active {
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+/* 凹陷效果 */
+.neumorphic-inset {
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+/* 按钮样式 */
+.neumorphic-button {
+  background: #e0e5ec;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text);
+}
+
+.neumorphic-button {
+  box-shadow: 
+    5px 5px 10px #a3b1c6,
+    -5px -5px 10px #ffffff;
+}
+
+.neumorphic-button:hover {
+  box-shadow: 
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+  transform: translateY(-2px);
+}
+
+.neumorphic-button:active {
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+  transform: translateY(0);
+}
+
+/* 输入框样式 */
+.neumorphic-input {
+  background: #e0e5ec;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  font-size: var(--text-base);
+  color: var(--text);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.neumorphic-input {
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+.neumorphic-input:focus {
+  outline: none;
+  box-shadow: 
+    inset 3px 3px 6px #a3b1c6,
+    inset -3px -3px 6px #ffffff;
+}
+
+.neumorphic-input::placeholder {
+  color: var(--medium);
+}
+
+/* 卡片样式 */
+.neumorphic-card {
+  background: #e0e5ec;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+}
+
+.neumorphic-card {
+  box-shadow: 
+    8px 8px 16px #a3b1c6,
+    -8px -8px 16px #ffffff;
+}
+
+.neumorphic-card:hover {
+  box-shadow: 
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+  transform: translateY(-3px);
+}
+
+/* 小卡片样式 */
+.neumorphic-card-sm {
+  background: #e0e5ec;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.neumorphic-card-sm {
+  box-shadow: 
+    4px 4px 8px #a3b1c6,
+    -4px -4px 8px #ffffff;
+}
+
+.neumorphic-card-sm:hover {
+  box-shadow: 
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+  transform: translateY(-2px);
+}
+
+/* 圆形元素 */
+.neumorphic-circle {
+  background: #e0e5ec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.neumorphic-circle {
+  box-shadow: 
+    5px 5px 10px #a3b1c6,
+    -5px -5px 10px #ffffff;
+}
+
+.neumorphic-circle:hover {
+  box-shadow: 
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+  transform: scale(1.05);
+}
+
+.neumorphic-circle:active {
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+  transform: scale(0.95);
+}
+
+/* 开关样式 */
+.neumorphic-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.neumorphic-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.neumorphic-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e0e5ec;
+  transition: var(--transition-normal);
+  border-radius: 34px;
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+.neumorphic-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: var(--transition-normal);
+  border-radius: 50%;
+  box-shadow: 
+    2px 2px 5px #a3b1c6,
+    -2px -2px 5px #ffffff;
+}
+
+.neumorphic-switch input:checked + .slider {
+  background: var(--primary);
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.neumorphic-switch input:checked + .slider:before {
+  transform: translateX(26px);
+  box-shadow: 
+    2px 2px 5px rgba(0, 0, 0, 0.3),
+    -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* 进度条 */
+.neumorphic-progress {
+  width: 100%;
+  height: 20px;
+  background: #e0e5ec;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+.neumorphic-progress .progress-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--radius-lg);
+  transition: width var(--transition-normal);
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 标签样式 */
+.neumorphic-tag {
+  background: #e0e5ec;
+  border-radius: var(--radius-full);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text);
+  display: inline-block;
+  margin-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.neumorphic-tag {
+  box-shadow: 
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+}
+
+.neumorphic-tag:hover {
+  box-shadow: 
+    2px 2px 4px #a3b1c6,
+    -2px -2px 4px #ffffff;
+  transform: translateY(-1px);
+}
+
+/* 深色主题适配 */
+@media (prefers-color-scheme: dark) {
+  .neumorphic,
+  .neumorphic-button,
+  .neumorphic-input,
+  .neumorphic-card,
+  .neumorphic-card-sm,
+  .neumorphic-circle {
+    background: #1e293b;
+  }
+  
+  .neumorphic-raised {
+    box-shadow: 
+      5px 5px 10px #0f172a,
+      -5px -5px 10px #2d3748;
+  }
+  
+  .neumorphic-raised:hover {
+    box-shadow: 
+      3px 3px 6px #0f172a,
+      -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-raised:active,
+  .neumorphic-inset {
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-button {
+    box-shadow: 
+      5px 5px 10px #0f172a,
+      -5px -5px 10px #2d3748;
+  }
+  
+  .neumorphic-button:hover {
+    box-shadow: 
+      3px 3px 6px #0f172a,
+      -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-button:active {
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-input {
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-input:focus {
+    box-shadow: 
+      inset 3px 3px 6px #0f172a,
+      inset -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-card {
+    box-shadow: 
+      8px 8px 16px #0f172a,
+      -8px -8px 16px #2d3748;
+  }
+  
+  .neumorphic-card:hover {
+    box-shadow: 
+      6px 6px 12px #0f172a,
+      -6px -6px 12px #2d3748;
+  }
+  
+  .neumorphic-card-sm {
+    box-shadow: 
+      4px 4px 8px #0f172a,
+      -4px -4px 8px #2d3748;
+  }
+  
+  .neumorphic-card-sm:hover {
+    box-shadow: 
+      3px 3px 6px #0f172a,
+      -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-circle {
+    box-shadow: 
+      5px 5px 10px #0f172a,
+      -5px -5px 10px #2d3748;
+  }
+  
+  .neumorphic-circle:hover {
+    box-shadow: 
+      3px 3px 6px #0f172a,
+      -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-circle:active {
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-switch .slider {
+    background: #1e293b;
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-switch .slider:before {
+    background: #e0e5ec;
+    box-shadow: 
+      2px 2px 5px #0f172a,
+      -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-progress {
+    background: #1e293b;
+    box-shadow: 
+      inset 2px 2px 5px #0f172a,
+      inset -2px -2px 5px #2d3748;
+  }
+  
+  .neumorphic-tag {
+    background: #1e293b;
+    box-shadow: 
+      3px 3px 6px #0f172a,
+      -3px -3px 6px #2d3748;
+  }
+  
+  .neumorphic-tag:hover {
+    box-shadow: 
+      2px 2px 4px #0f172a,
+      -2px -2px 4px #2d3748;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .neumorphic-button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--text-sm);
+  }
+  
+  .neumorphic-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .neumorphic-card-sm {
+    padding: var(--spacing-md);
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ClassNet - 重定向</title>
+    <script>
+        // 检查登录状态
+        function checkLoginStatus() {
+            var token = localStorage.getItem('token');
+            if (token) {
+                // 已登录，跳转到桌面页面
+                window.location.href = '/frontend/desktop/index.html';
+            } else {
+                // 未登录，跳转到登录页
+                window.location.href = '/frontend/auth/index.html';
+            }
+        }
+        
+        // 执行登录状态检查
+        checkLoginStatus();
+    </script>
+</head>
+<body>
+    <p>正在跳转到登录页...</p>
+</body>
+</html>

@@ -1,0 +1,405 @@
+/* 玻璃拟态(Glassmorphism)样式文件 */
+/* 与Bulma组件库兼容 */
+
+/* 基础玻璃拟态样式 */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  transition: all var(--transition-normal);
+}
+
+/* Bulma兼容性 */
+.card.glassmorphism {
+  border: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.button.glassmorphism-button {
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Bulma输入框兼容性 */
+.input.glassmorphism-input,
+.textarea.glassmorphism-input {
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Bulma模态框兼容性 */
+.modal-content.glassmorphism-modal {
+  border: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Bulma导航栏兼容性 */
+.navbar.glassmorphism-nav {
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glassmorphism:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 卡片样式 */
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+}
+
+.glassmorphism-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+  transform: translateY(-3px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 小卡片样式 */
+.glassmorphism-card-sm {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.glassmorphism-card-sm:hover {
+  box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.2);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 按钮样式 */
+.glassmorphism-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text);
+}
+
+.glassmorphism-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.2);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glassmorphism-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* 输入框样式 */
+.glassmorphism-input {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-md);
+  font-size: var(--text-base);
+  color: var(--text);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.glassmorphism-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glassmorphism-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 导航栏样式 */
+.glassmorphism-nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-md) var(--spacing-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+.glassmorphism-nav.scrolled {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.2);
+}
+
+/* 侧边栏样式 */
+.glassmorphism-sidebar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 4px 0 16px 0 rgba(31, 38, 135, 0.15);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  overflow-y: auto;
+}
+
+.glassmorphism-sidebar.collapsed {
+  width: 80px;
+}
+
+/* 模态框样式 */
+.glassmorphism-modal {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-2xl);
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.glassmorphism-modal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 标签样式 */
+.glassmorphism-tag {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text);
+  display: inline-block;
+  margin-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.glassmorphism-tag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.2);
+  transform: translateY(-1px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 按钮变体 */
+.glassmorphism-button-primary {
+  background: rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.2);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: white;
+}
+
+.glassmorphism-button-primary:hover {
+  background: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 24px 0 rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.glassmorphism-button-secondary {
+  background: rgba(16, 185, 129, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 16px 0 rgba(16, 185, 129, 0.2);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: white;
+}
+
+.glassmorphism-button-secondary:hover {
+  background: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 24px 0 rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* 深色主题适配 */
+@media (prefers-color-scheme: dark) {
+  .glassmorphism,
+  .glassmorphism-card,
+  .glassmorphism-card-sm,
+  .glassmorphism-button,
+  .glassmorphism-input,
+  .glassmorphism-nav,
+  .glassmorphism-sidebar,
+  .glassmorphism-modal,
+  .glassmorphism-tag {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+  }
+  
+  .glassmorphism:hover,
+  .glassmorphism-card:hover,
+  .glassmorphism-card-sm:hover,
+  .glassmorphism-button:hover,
+  .glassmorphism-input:focus,
+  .glassmorphism-nav.scrolled,
+  .glassmorphism-tag:hover {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  
+  .glassmorphism {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .glassmorphism:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glassmorphism-card {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .glassmorphism-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glassmorphism-button {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .glassmorphism-button:hover {
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glassmorphism-input {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .glassmorphism-input:focus {
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glassmorphism-input::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+  }
+}
+
+/* 兼容性处理 */
+@supports not (backdrop-filter: blur(10px)) {
+  .glassmorphism,
+  .glassmorphism-card,
+  .glassmorphism-card-sm,
+  .glassmorphism-button,
+  .glassmorphism-input,
+  .glassmorphism-nav,
+  .glassmorphism-sidebar,
+  .glassmorphism-modal,
+  .glassmorphism-tag {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .glassmorphism,
+    .glassmorphism-card,
+    .glassmorphism-card-sm,
+    .glassmorphism-button,
+    .glassmorphism-input,
+    .glassmorphism-nav,
+    .glassmorphism-sidebar,
+    .glassmorphism-modal,
+    .glassmorphism-tag {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .glassmorphism-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .glassmorphism-card-sm {
+    padding: var(--spacing-md);
+  }
+  
+  .glassmorphism-button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--text-sm);
+  }
+  
+  .glassmorphism-sidebar {
+    width: 200px;
+  }
+  
+  .glassmorphism-sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .glassmorphism-modal {
+    padding: var(--spacing-xl);
+    max-width: 90%;
+  }
+}
+
+/* 横屏平板适配 */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .glassmorphism-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .glassmorphism-sidebar {
+    width: 220px;
+  }
+}

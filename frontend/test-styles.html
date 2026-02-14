@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式测试页面</title>
+    <!-- 引入FontAwesome -->
+    <link rel="stylesheet" href="public/fontawesome/css/all.min.css">
+    <!-- 引入全局样式 -->
+    <link rel="stylesheet" href="public/styles/global.css">
+    <!-- 引入新拟态样式 -->
+    <link rel="stylesheet" href="public/styles/neumorphism.css">
+    <!-- 引入玻璃拟态样式 -->
+    <link rel="stylesheet" href="public/styles/glassmorphism.css">
+    <style>
+        /* 测试页面专用样式 */
+        .test-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            background-color: var(--background-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .test-section h2 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .test-card {
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        
+        .test-button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .test-input-group {
+            margin-top: 1rem;
+        }
+        
+        .test-input-group input {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <header class="text-center mb-8">
+            <h1>样式文件测试页面</h1>
+            <p>测试全局样式、新拟态样式和玻璃拟态样式是否正常加载和工作</p>
+            <button id="toggle-desktop" class="btn btn-primary mt-4">切换桌面应用模式</button>
+        </header>
+
+        <!-- 全局样式测试 -->
+        <section class="test-section">
+            <h2>1. 全局样式测试</h2>
+            
+            <div class="test-grid">
+                <div class="test-card card">
+                    <h3>基础卡片</h3>
+                    <p>测试基础卡片样式</p>
+                </div>
+                
+                <div class="test-card">
+                    <h3>按钮样式</h3>
+                    <div class="test-button-group">
+                        <button class="btn btn-primary">主要按钮</button>
+                        <button class="btn btn-secondary">次要按钮</button>
+                        <button class="btn btn-danger">危险按钮</button>
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h3>输入框样式</h3>
+                    <div class="test-input-group">
+                        <input type="text" class="form-control" placeholder="测试输入框">
+                        <input type="password" class="form-control" placeholder="测试密码框">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新拟态样式测试 -->
+        <section class="test-section">
+            <h2>2. 新拟态样式测试</h2>
+            
+            <div class="test-grid">
+                <div class="test-card neumorphic neumorphic-raised">
+                    <h3>凸起效果</h3>
+                    <p>测试新拟态凸起效果</p>
+                </div>
+                
+                <div class="test-card neumorphic neumorphic-inset">
+                    <h3>凹陷效果</h3>
+                    <p>测试新拟态凹陷效果</p>
+                </div>
+                
+                <div class="test-card">
+                    <h3>新拟态按钮</h3>
+                    <div class="test-button-group">
+                        <button class="neumorphic-button">新拟态按钮</button>
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h3>新拟态输入框</h3>
+                    <div class="test-input-group">
+                        <input type="text" class="neumorphic-input" placeholder="新拟态输入框">
+                    </div>
+                </div>
+                
+                <div class="test-card neumorphic-card">
+                    <h3>新拟态卡片</h3>
+                    <p>测试新拟态卡片样式</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 玻璃拟态样式测试 -->
+        <section class="test-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem;">
+            <h2 style="color: white; border-bottom-color: white;">3. 玻璃拟态样式测试</h2>
+            
+            <div class="test-grid">
+                <div class="test-card glassmorphism">
+                    <h3>玻璃拟态基础</h3>
+                    <p>测试玻璃拟态基础样式</p>
+                </div>
+                
+                <div class="test-card glassmorphism-card">
+                    <h3>玻璃拟态卡片</h3>
+                    <p>测试玻璃拟态卡片样式</p>
+                </div>
+                
+                <div class="test-card">
+                    <h3>玻璃拟态按钮</h3>
+                    <div class="test-button-group">
+                        <button class="glassmorphism-button">玻璃按钮</button>
+                        <button class="glassmorphism-button-primary">主要玻璃按钮</button>
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h3>玻璃拟态输入框</h3>
+                    <div class="test-input-group">
+                        <input type="text" class="glassmorphism-input" placeholder="玻璃拟态输入框">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式设计测试 -->
+        <section class="test-section">
+            <h2>4. 响应式设计测试</h2>
+            
+            <div class="grid grid-cols-4 gap-md">
+                <div class="card">
+                    <h3>响应式卡片 1</h3>
+                    <p>测试响应式网格布局</p>
+                </div>
+                <div class="card">
+                    <h3>响应式卡片 2</h3>
+                    <p>测试响应式网格布局</p>
+                </div>
+                <div class="card">
+                    <h3>响应式卡片 3</h3>
+                    <p>测试响应式网格布局</p>
+                </div>
+                <div class="card">
+                    <h3>响应式卡片 4</h3>
+                    <p>测试响应式网格布局</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 动画效果测试 -->
+        <section class="test-section">
+            <h2>5. 动画效果测试</h2>
+            
+            <div class="test-grid">
+                <div class="test-card card fade-in">
+                    <h3>淡入动画</h3>
+                    <p>测试淡入动画效果</p>
+                </div>
+                
+                <div class="test-card card slide-in">
+                    <h3>滑入动画</h3>
+                    <p>测试滑入动画效果</p>
+                </div>
+                
+                <div class="test-card">
+                    <h3>加载动画</h3>
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 测试样式文件是否正常加载
+        console.log('样式文件测试页面加载完成');
+        console.log('测试全局样式:', document.querySelector('.btn-primary') !== null);
+        console.log('测试新拟态样式:', document.querySelector('.neumorphic-button') !== null);
+        console.log('测试玻璃拟态样式:', document.querySelector('.glassmorphism') !== null);
+        
+        // 切换桌面应用模式
+        const toggleDesktopBtn = document.getElementById('toggle-desktop');
+        let isDesktopMode = false;
+        
+        toggleDesktopBtn.addEventListener('click', function() {
+            isDesktopMode = !isDesktopMode;
+            if (isDesktopMode) {
+                document.documentElement.classList.add('desktop-app');
+                toggleDesktopBtn.textContent = '退出桌面应用模式';
+                console.log('已切换到桌面应用模式，背景应该被移除');
+            } else {
+                document.documentElement.classList.remove('desktop-app');
+                toggleDesktopBtn.textContent = '切换桌面应用模式';
+                console.log('已退出桌面应用模式，背景应该显示');
+            }
+        });
+    </script>
+</body>
+</html>

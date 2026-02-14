@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ClassNet - 桌面</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
+    <!-- 桌面页面样式 -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- 登录状态检查 -->
+    <script>
+        // 检查登录状态
+        function checkLoginStatus() {
+            var token = localStorage.getItem('token');
+            if (!token) {
+                // 未登录，跳转到登录页
+                window.location.href = '../auth/index.html';
+            }
+        }
+        
+        // 页面加载时检查登录状态
+        checkLoginStatus();
+    </script>
+</head>
+<body class="desktop-body">
+    <!-- 顶部通知栏 -->
+    <div class="notification-bar" id="notification-bar">
+        <div class="notification-bar-left">
+            <div class="welcome-text">
+                <div class="welcome-main">欢迎ClassNet</div>
+                <div class="welcome-sub">科技改变生活 创新铸就未来</div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Mac OS风格的Dock栏 -->
+    <div class="dock" id="dock">
+        <div class="dock-container">
+
+            <div class="dock-item" data-app="video">
+                <i class="fas fa-video"></i>
+                <span class="dock-label">视频</span>
+            </div>
+            <div class="dock-item" data-app="music">
+                <i class="fas fa-music"></i>
+                <span class="dock-label">音乐</span>
+            </div>
+            <div class="dock-item" data-app="weather">
+                <i class="fas fa-cloud-sun"></i>
+                <span class="dock-label">天气</span>
+            </div>
+            <div class="dock-item" data-app="chat">
+                <i class="fas fa-comments"></i>
+                <span class="dock-label">聊天</span>
+            </div>
+            <div class="dock-item" data-app="calendar">
+                <i class="fas fa-calendar"></i>
+                <span class="dock-label">日历</span>
+            </div>
+            <div class="dock-item" data-app="schedule">
+                <i class="fas fa-table"></i>
+                <span class="dock-label">课程表</span>
+            </div>
+            <div class="dock-item" data-app="settings">
+                <i class="fas fa-cog"></i>
+                <span class="dock-label">设置</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 桌面页面脚本 -->
+    <script src="script.js"></script>
+</body>
+</html>

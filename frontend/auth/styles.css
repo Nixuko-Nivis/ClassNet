@@ -1,0 +1,573 @@
+/* 认证页面样式 */
+
+/* 基础样式 */
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f2f5;
+    background-image: linear-gradient(135deg, #f0f2f5 0%, #e8eaf6 100%);
+    font-family: 'Arial', sans-serif;
+}
+
+/* 容器样式 */
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* 玻璃拟态卡片 */
+.glassmorphism-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+    padding: 40px;
+    transition: all 0.3s ease;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* 美化滚动条 */
+.glassmorphism-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.glassmorphism-card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.glassmorphism-card::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 10px;
+}
+
+.glassmorphism-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.5);
+}
+
+/* 降级方案：不支持backdrop-filter的浏览器 */
+@supports not (backdrop-filter: blur(10px)) {
+    .glassmorphism-card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+    }
+}
+
+/* 认证卡片特定样式 */
+.auth-card {
+    text-align: center;
+}
+
+/* 认证头部 */
+.auth-header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.auth-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3B82F6;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.auth-subtitle {
+    font-size: 1.2rem;
+    color: #6B7280;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* 标签切换 */
+.auth-tabs {
+    display: flex;
+    background-color: rgba(229, 231, 235, 0.5);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6B7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-tab:hover {
+    color: #3B82F6;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-tab.active {
+    color: #FFFFFF;
+    background-color: #3B82F6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.auth-tab:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* 表单容器 */
+.form-container {
+    position: relative;
+    min-height: 450px;
+    overflow-y: visible;
+    flex-grow: 1;
+}
+
+/* 表单面板 */
+.form-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px) scale(0.95);
+    pointer-events: none;
+    background: transparent;
+}
+
+.form-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+/* 密码输入容器 */
+.password-input {
+    position: relative;
+}
+
+/* 切换密码可见性按钮 */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6B7280;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #374151;
+}
+
+/* 错误信息 */
+.error-message {
+    color: #EF4444;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    text-align: left;
+    min-height: 1.2rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 输入框错误状态 - 与Bulma兼容 */
+.input.is-danger {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* 加载遮罩 - 与Bulma兼容 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 加载动画 - 与Bulma兼容 */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #3B82F6;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* 按钮加载状态 - 基于Bulma */
+.button.is-loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.button.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 响应式设计 - 与Bulma兼容 */
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .glassmorphism-card {
+        padding: 28px;
+        border-radius: 20px;
+        gap: 20px;
+    }
+    
+    .auth-title {
+        font-size: 2.5rem;
+    }
+    
+    .auth-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .auth-tab {
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+    
+    .form-container {
+        min-height: 400px;
+    }
+    
+    .form-panel {
+        padding: 15px 0;
+    }
+    
+    /* 与Bulma的field类兼容 */
+    .field {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* 与Bulma的label类兼容 */
+    .label {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* 与Bulma的input类兼容 */
+    .input {
+        padding: 0.75rem 0.875rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+    
+    /* 与Bulma的button类兼容 */
+    .button.is-primary {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .glassmorphism-card {
+        padding: 24px;
+    }
+    
+    .auth-title {
+        font-size: 2.2rem;
+    }
+    
+    .auth-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* 横屏平板适配 */
+@media (min-width: 768px) and (orientation: landscape) {
+    .auth-container {
+        max-width: 550px;
+    }
+    
+    .glassmorphism-card {
+        padding: 45px;
+    }
+    
+    .auth-title {
+        font-size: 3.2rem;
+    }
+    
+    .form-container {
+        min-height: 480px;
+    }
+}
+
+/* 桌面设备适配 */
+@media (min-width: 1024px) {
+    .auth-body {
+        min-height: 100vh;
+    }
+    
+    .auth-container {
+        max-width: 520px;
+    }
+}
+
+/* 表单输入焦点样式 - 增强Bulma效果 */
+.input:focus {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* 按钮样式增强 - 基于Bulma */
+.button.is-primary {
+    background-color: #3B82F6 !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 12px !important;
+    padding: 14px 24px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+.button.is-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.button.is-primary:hover {
+    background-color: #2563EB !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+.button.is-primary:hover::before {
+    transform: translateX(100%);
+}
+
+.button.is-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.button.is-primary:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* 按钮加载状态 - 基于Bulma */
+.button.is-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.button.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* 表单字段间距 - 与Bulma兼容 */
+.field {
+    margin-bottom: 1.5rem !important;
+}
+
+/* 标签样式 - 增强Bulma效果 */
+.label {
+    text-align: left;
+    display: block;
+    margin-bottom: 0.625rem;
+    font-weight: 500;
+    color: #374151;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+/* 屏幕阅读器专用类 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 输入框样式 - 增强Bulma效果 */
+.input {
+    transition: all 0.2s ease;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    font-size: 1.05rem !important;
+    border: 2px solid #E5E7EB !important;
+}
+
+/* 密码强度指示器 */
+.password-strength {
+    margin-top: 10px;
+}
+
+.password-strength-label {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.password-strength-bars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 5px;
+    height: 6px;
+}
+
+.password-strength-bar {
+    flex: 1;
+    background-color: #E5E7EB;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 密码强度级别样式 */
+.password-strength-bar.weak {
+    background-color: #EF4444;
+}
+
+.password-strength-bar.medium {
+    background-color: #F59E0B;
+}
+
+.password-strength-bar.strong {
+    background-color: #10B981;
+}
+
+.password-strength-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.password-strength-text.weak {
+    color: #EF4444;
+}
+
+.password-strength-text.medium {
+    color: #F59E0B;
+}
+
+.password-strength-text.strong {
+    color: #10B981;
+}
+
+/* 确保Bulma核心类正常工作 */
+.field {
+    margin-bottom: 1.5rem;
+}
+
+.control {
+    position: relative;
+}
+
+/* 复选框样式 - 与Bulma兼容 */
+.checkbox {
+    text-align: left;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 0.5rem;
+}

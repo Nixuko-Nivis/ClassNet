@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ClassNet - 设置</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="../public/bulma/css/bulma.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="settings-container">
+        <!-- 左侧导航栏 -->
+        <aside class="settings-sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">设置</h1>
+                <a href="../desktop/index.html" class="back-to-desktop">
+                    <i class="fas fa-desktop"></i>
+                    <span>返回桌面</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h2 class="nav-section-title">个人信息</h2>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#profile" class="nav-link active" data-page="profile">
+                                <i class="fas fa-user-circle"></i>
+                                <span>个人资料</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#password" class="nav-link" data-page="password">
+                                <i class="fas fa-lock"></i>
+                                <span>修改密码</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h2 class="nav-section-title">设置</h2>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#admin" class="nav-link" data-page="admin">
+                                <i class="fas fa-cog"></i>
+                                <span>后台管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#logout" class="nav-link" data-page="logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>退出登录</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- 右侧内容区 -->
+        <main class="settings-content">
+            <!-- 个人资料页面 -->
+            <div class="content-page" id="profile-page">
+                <div class="page-header">
+                    <h2 class="page-title">个人资料</h2>
+                    <p class="page-subtitle">查看和编辑您的个人信息</p>
+                </div>
+                <div class="page-content">
+                    <form id="profile-form">
+                        <!-- 账号信息 -->
+                        <div class="form-section">
+                            <h3 class="section-title">账号信息</h3>
+                            <div class="field is-grouped">
+                                <div class="field">
+                                    <label class="label">用户ID</label>
+                                    <div class="control">
+                                        <input class="input is-static" type="text" id="user-id" value="" disabled>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">真实姓名</label>
+                                    <div class="control">
+                                        <input class="input is-static" type="text" id="real-name" value="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="username">用户名</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="username" placeholder="请输入用户名">
+                                </div>
+                                <div class="error-message" aria-live="polite"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 可选信息 -->
+                        <div class="form-section">
+                            <h3 class="section-title">联系方式</h3>
+                            <div class="field is-grouped">
+                                <div class="field">
+                                    <label class="label" for="phone">手机号</label>
+                                    <div class="control">
+                                        <input class="input" type="tel" id="phone" placeholder="请输入手机号（选填）">
+                                    </div>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="qq">QQ号</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="qq" placeholder="请输入QQ号（选填）">
+                                    </div>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="field">
+                                    <label class="label" for="wechat">微信号</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="wechat" placeholder="请输入微信号（选填）">
+                                    </div>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="address">住址</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="address" placeholder="请输入住址（选填）">
+                                    </div>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="bio">个人签名</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="bio" placeholder="请输入个人签名（选填）" rows="3"></textarea>
+                                </div>
+                                <div class="error-message" aria-live="polite"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 提交按钮 -->
+                        <div class="form-actions">
+                            <button type="submit" class="button is-primary">保存更改</button>
+                            <button type="button" class="button is-light" id="cancel-profile">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 密码修改页面 -->
+            <div class="content-page" id="password-page" style="display: none;">
+                <div class="page-header">
+                    <h2 class="page-title">修改密码</h2>
+                    <p class="page-subtitle">修改您的账号密码</p>
+                </div>
+                <div class="page-content">
+                    <form id="password-form">
+                        <div class="form-section">
+                            <div class="field">
+                                <label class="label" for="current-password">原密码</label>
+                                <div class="control password-input">
+                                    <input class="input" type="password" id="current-password" placeholder="请输入原密码" required>
+                                    <button type="button" class="toggle-password" aria-label="切换密码可见性" aria-pressed="false">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label" for="new-password">新密码</label>
+                                <div class="control password-input">
+                                    <input class="input" type="password" id="new-password" placeholder="请输入新密码" required>
+                                    <button type="button" class="toggle-password" aria-label="切换密码可见性" aria-pressed="false">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" aria-live="polite"></div>
+                                <!-- 密码强度指示器 -->
+                                <div class="password-strength" id="password-strength" aria-live="polite">
+                                    <div class="password-strength-label">密码强度：</div>
+                                    <div class="password-strength-bars">
+                                        <div class="password-strength-bar" data-index="0" aria-hidden="true"></div>
+                                        <div class="password-strength-bar" data-index="1" aria-hidden="true"></div>
+                                        <div class="password-strength-bar" data-index="2" aria-hidden="true"></div>
+                                        <div class="password-strength-bar" data-index="3" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="password-strength-text" id="password-strength-text">弱</div>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label" for="confirm-password">确认新密码</label>
+                                <div class="control password-input">
+                                    <input class="input" type="password" id="confirm-password" placeholder="请再次输入新密码" required>
+                                    <button type="button" class="toggle-password" aria-label="切换密码可见性" aria-pressed="false">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" aria-live="polite"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 提交按钮 -->
+                        <div class="form-actions">
+                            <button type="submit" class="button is-primary">保存更改</button>
+                            <button type="button" class="button is-light" id="cancel-password">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 后台管理页面 -->
+            <div class="content-page" id="admin-page" style="display: none;">
+                <div class="page-header">
+                    <h2 class="page-title">后台管理</h2>
+                    <p class="page-subtitle">管理系统设置和用户</p>
+                </div>
+                <div class="page-content">
+                    <div class="admin-actions">
+                        <a href="#" class="button is-primary is-large">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>进入后台管理</span>
+                        </a>
+                        <p class="help-text">点击上方按钮进入后台管理系统</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 退出登录页面 -->
+            <div class="content-page" id="logout-page" style="display: none;">
+                <div class="page-header">
+                    <h2 class="page-title">退出登录</h2>
+                    <p class="page-subtitle">确认退出您的账号</p>
+                </div>
+                <div class="page-content">
+                    <div class="logout-confirm">
+                        <div class="logout-icon">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </div>
+                        <h3>确定要退出登录吗？</h3>
+                        <p>退出后需要重新登录才能访问系统</p>
+                        <div class="logout-actions">
+                            <button class="button is-danger" id="confirm-logout">
+                                <i class="fas fa-check"></i>
+                                <span>确定</span>
+                            </button>
+                            <button class="button is-light" id="cancel-logout">
+                                <i class="fas fa-times"></i>
+                                <span>取消</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 加载遮罩 -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- 设置页面脚本 -->
+    <script src="js/script.js"></script>
+</body>
+</html>
