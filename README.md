@@ -1,11 +1,11 @@
 # ClassNet 项目
 
-[![GitHub stars](https://img.shields.io/github/stars/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/issues)
-[![GitHub license](https://img.shields.io/github/license/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/blob/main/LICENSE)
-[![GitHub top language](https://img.shields.io/github/languages/top/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet)
-[![GitHub language count](https://img.shields.io/github/languages/count/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet)
+[![GitHub stars](https://img.shields.io/github/stars/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet/issues)
+[![GitHub license](https://img.shields.io/github/license/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet/blob/main/LICENSE)
+[![GitHub top language](https://img.shields.io/github/languages/top/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet)
+[![GitHub language count](https://img.shields.io/github/languages/count/Nixuko-Nivis/ClassNet)](https://github.com/Nixuko-Nivis/ClassNet)
 
 ## 项目介绍
 
