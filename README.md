@@ -1,5 +1,12 @@
 # ClassNet 项目
 
+[![GitHub stars](https://img.shields.io/github/stars/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/issues)
+[![GitHub license](https://img.shields.io/github/license/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet/blob/main/LICENSE)
+[![GitHub top language](https://img.shields.io/github/languages/top/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet)
+[![GitHub language count](https://img.shields.io/github/languages/count/Nixuko-Nivis/ClassNet?style=for-the-badge)](https://github.com/Nixuko-Nivis/ClassNet)
+
 ## 项目介绍
 
 ClassNet 是一个专为班级内部使用设计的网络系统，提供了丰富的功能，包括视频播放、音乐播放、日历、天气、AI聊天、聊天、课程表等应用。系统采用前后端分离的架构，后端使用 Python 构建 HTTP 服务器，前端使用 HTML、CSS 和 JavaScript 实现。

@@ -174,6 +174,14 @@ function validateField(input) {
             }
         }
         
+        // 验证生日
+        if (input.id === 'birthday') {
+            if (input.value.trim() !== '' && !/^\d{4}-\d{2}-\d{2}$/.test(input.value)) {
+                message = '生日格式不正确，应为 YYYY-MM-DD';
+                isValid = false;
+            }
+        }
+        
         // 验证原密码
         if (input.id === 'current-password') {
             if (input.value === '') {
@@ -364,6 +372,7 @@ function handleProfileSubmit(form) {
         var wechat = document.getElementById('wechat').value;
         var address = document.getElementById('address').value;
         var bio = document.getElementById('bio').value;
+        var birthday = document.getElementById('birthday').value;
         
         // 构建请求体
         var requestData = {
@@ -372,7 +381,8 @@ function handleProfileSubmit(form) {
             qq: qq,
             wechat: wechat,
             address: address,
-            bio: bio
+            bio: bio,
+            birthday: birthday
         };
         
         // 获取token
@@ -545,19 +555,20 @@ function loadUserInfo() {
     .then(function(data) {
         hideLoading();
         if (data.code === 200) {
-            var userData = data.data;
-            // 填充表单数据
-            document.getElementById('user-id').value = userData.user_id;
-            document.getElementById('real-name').value = userData.realname;
-            document.getElementById('username').value = userData.username;
-            document.getElementById('phone').value = userData.phone || '';
-            document.getElementById('qq').value = userData.qq || '';
-            document.getElementById('wechat').value = userData.wechat || '';
-            document.getElementById('address').value = userData.address || '';
-            document.getElementById('bio').value = userData.bio || '';
-        } else {
-            showNotification(data.message || '获取用户信息失败', 'error');
-        }
+                var userData = data.data;
+                // 填充表单数据
+                document.getElementById('user-id').value = userData.user_id;
+                document.getElementById('real-name').value = userData.realname;
+                document.getElementById('username').value = userData.username;
+                document.getElementById('phone').value = userData.phone || '';
+                document.getElementById('qq').value = userData.qq || '';
+                document.getElementById('wechat').value = userData.wechat || '';
+                document.getElementById('address').value = userData.address || '';
+                document.getElementById('bio').value = userData.bio || '';
+                document.getElementById('birthday').value = userData.birthday || '';
+            } else {
+                showNotification(data.message || '获取用户信息失败', 'error');
+            }
     })
     .catch(function(error) {
         hideLoading();

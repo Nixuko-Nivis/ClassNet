@@ -20,6 +20,7 @@ class User(Base):
     wechat = Column(String)
     address = Column(String)
     bio = Column(String)
+    birthday = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
     
@@ -49,7 +50,7 @@ class User(Base):
         return db.query(cls).limit(limit).offset(offset).all()
     
     @classmethod
-    def create(cls, db: Session, username: str, password_hash: str, email: Optional[str] = None, real_name: Optional[str] = None, phone: Optional[str] = None, qq: Optional[str] = None, wechat: Optional[str] = None, address: Optional[str] = None, bio: Optional[str] = None) -> 'User':
+    def create(cls, db: Session, username: str, password_hash: str, email: Optional[str] = None, real_name: Optional[str] = None, phone: Optional[str] = None, qq: Optional[str] = None, wechat: Optional[str] = None, address: Optional[str] = None, bio: Optional[str] = None, birthday: Optional[str] = None) -> 'User':
         """创建新用户"""
         db_user = cls(
             username=username,
@@ -60,7 +61,8 @@ class User(Base):
             qq=qq,
             wechat=wechat,
             address=address,
-            bio=bio
+            bio=bio,
+            birthday=birthday
         )
         db.add(db_user)
         db.commit()

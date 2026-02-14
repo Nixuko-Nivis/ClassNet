@@ -11,6 +11,7 @@ class UserProfileUpdate(BaseModel):
     wechat: Optional[str] = Field(None, description="微信号")
     address: Optional[str] = Field(None, description="住址")
     bio: Optional[str] = Field(None, description="个人签名")
+    birthday: Optional[str] = Field(None, description="生日")
 
 
 class UserProfileResponse(BaseModel):
@@ -31,3 +32,10 @@ class PasswordUpdateResponse(BaseModel):
     code: int
     message: str
     data: Optional[Dict[str, Any]] = None
+
+
+class UserListResponse(BaseModel):
+    """用户列表响应"""
+    code: int
+    message: str
+    data: Dict[str, Any]

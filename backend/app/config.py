@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     """应用配置"""
     # 服务器配置
     server_host: str = "0.0.0.0"
-    server_port: int = 8001
+    server_port: int = 8000
     
     # 数据库配置
     database_url: str = "sqlite:///./data/database/classnet_new.db"

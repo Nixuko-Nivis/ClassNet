@@ -8,6 +8,19 @@ if (document.readyState === 'loading') {
 }
 
 function initAuthPage() {
+    // 检查用户是否已经登录
+    console.log('检查登录状态...');
+    console.log('localStorage.getItem("token"):', localStorage.getItem('token'));
+    
+    if (localStorage.getItem('token')) {
+        // 如果已经登录，跳转到桌面页面
+        console.log('用户已登录，跳转到桌面页面...');
+        window.location.href = '../desktop/index.html';
+        return;
+    } else {
+        console.log('用户未登录，显示登录页面...');
+    }
+    
     // 隐藏页面加载动画
     setTimeout(function() {
         var pageLoader = document.getElementById('page-loader');

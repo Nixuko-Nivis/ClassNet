@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import os
 
-from app.api import auth, user, chat, media, system, weather
+from app.api import auth, user, chat, media, system, weather, admin
 from app.database import init_db
 
 # 创建 FastAPI 应用实例
@@ -29,6 +29,7 @@ app.include_router(chat.router, prefix="/api/chat", tags=["聊天"])
 app.include_router(media.router, prefix="/api/media", tags=["媒体"])
 app.include_router(system.router, prefix="/api/system", tags=["系统"])
 app.include_router(weather.router, prefix="/api/weather", tags=["天气"])
+app.include_router(admin.router, prefix="/api/admin", tags=["后台管理"])
 
 # 初始化数据库
 init_db()

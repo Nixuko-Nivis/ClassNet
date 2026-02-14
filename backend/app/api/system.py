@@ -32,6 +32,24 @@ def get_system_status(token: str = Depends(oauth2_scheme)):
         )
 
 
+@router.get("/status/public")
+def get_public_system_status():
+    """获取公开的系统状态（无需认证）"""
+    try:
+        status_data = system_service.get_system_status()
+        return {
+            "code": 200,
+            "message": "获取系统状态成功",
+            "data": status_data
+        }
+    except Exception as e:
+        logger.error(f"获取系统状态失败: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="获取系统状态失败"
+        )
+
+
 @router.get("/resources", response_model=system_schemas.SystemStatusResponse)
 def get_resource_usage(token: str = Depends(oauth2_scheme)):
     """获取资源使用情况"""

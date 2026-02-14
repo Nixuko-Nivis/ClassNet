@@ -10,7 +10,10 @@ import os
 
 def load_predefined_names():
     """加载预定义的姓名列表"""
-    json_path = os.path.join(os.path.dirname(__file__), '../../../data/database/unified_user_data.json')
+    current_file = os.path.abspath(__file__)
+    backend_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
+    project_root = os.path.dirname(backend_dir)
+    json_path = os.path.join(project_root, 'data', 'database', 'unified_user_data.json')
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -80,8 +83,19 @@ def login(username: str, password: str) -> Dict[str, Any]:
             raise ValueError("用户名或密码错误")
         
         # 验证密码
-        hashed_password = str(user.password_hash)
-        if not verify_password(password, hashed_password):
+        if not user.password_hash:
+            raise ValueError("用户名或密码错误")
+        
+        print(f"user.password_hash: {user.password_hash}")
+        print(f"type(user.password_hash): {type(user.password_hash)}")
+        
+        try:
+            hashed_password = str(user.password_hash)
+            print(f"hashed_password: {hashed_password}")
+            if not verify_password(password, hashed_password):
+                raise ValueError("用户名或密码错误")
+        except Exception as e:
+            print(f"验证密码时出错: {e}")
             raise ValueError("用户名或密码错误")
         
         return {
